@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>CS325 Game Prototypes</title>
-    <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
-    <style>
-        body{
-            background-color: rgb(10, 11, 26);
-            color: #fff;
-            margin: 0;
-            font-family: "Alata", Verdana, sans-serif;
-        }
-        p{
-            margin: 0;
-        }
-        .content{
-            padding: 15px;
-            background-color: rgb(28, 31, 58);
-            border: 4px ridge #fff;
-            border-radius: 16px;
-            box-shadow: rgba(3, 1, 19, 0.8) 10px 10px 0px;
-            margin: 10px;
-        }
-        .smallcontent{
-            padding: 15px;
-            background-color: rgb(28, 31, 58);
-            border-radius: 16px;
-            margin: 10px;
-        }
-        a{
-            color: lightblue;
-            text-decoration: none;
-        }
-        a:hover {
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <div style="display: flex; flex-direction: column; position: fixed; width: 100vw; height: 100vh; align-items: center; justify-content: center;">
-        <h1 style="margin: 10px;">CS 325 Game Prototypes</h1>
+    <head>
+        <meta charset="utf-8">
+        <title>CS325 Game Prototypes</title>
+        <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+        <style>
+            body{
+                background-color: rgb(10, 11, 26);
+                color: #fff;
+                margin: 0;
+                font-family: "Alata", Verdana, sans-serif;
+            }
+            p{
+                margin: 0;
+            }
+            .content{
+                padding: 15px;
+                background-color: rgb(28, 31, 58);
+                border: 4px ridge #fff;
+                border-radius: 16px;
+                box-shadow: rgba(3, 1, 19, 0.8) 10px 10px 0px;
+                margin: 10px;
+            }
+            .smallcontent{
+                padding: 15px;
+                background-color: rgb(28, 31, 58);
+                border-radius: 16px;
+                margin: 10px;
+            }
+            a{
+                color: lightblue;
+                text-decoration: none;
+            }
+            a:hover {
+                color: white;
+            }
+            h1 > span{
+                transform: translatey(-9px);
+                display: table-cell;
+            }
+            @keyframes upDown {
+                to { transform: translateY(-25px);}
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display: flex; flex-direction: column; position: fixed; width: 100vw; height: 100vh; align-items: center; justify-content: center;">
+            <h1 style="margin: 10px;">
+                <span>C</span><span>S</span><span>&nbsp;</span>
+                <span>3</span><span>2</span><span>5</span><span>&nbsp;</span>
+                <span>G</span><span>a</span><span>m</span><span>e</span><span>&nbsp;</span>
+                <span>P</span><span>r</span><span>o</span><span>t</span><span>o</span><span>t</span><span>y</span><span>p</span><span>e</span><span>s</span><span>&nbsp;</span>
+            </h1>
 
-        <div class="smallcontent">
-            <p>I am making creative and experimental game prototypes!<br>Here is the list of them:</p>
+            <div class="smallcontent">
+                <p>I am making creative and experimental game prototypes!<br>Here is the list of them:</p>
+            </div>
+
+            <div class="content">
+                <p><a href="https://microstudio.io/ninjabou/tutorialcreateagame/8RZJMAUV/">Digital Assignment 0: MicroStudio Tutorial</a></p>
+            </div>
+
+            <p style="margin: 15px;">More coming soon...</p>
         </div>
 
-        <div class="content">
-            <p><a href="https://microstudio.io/ninjabou/tutorialcreateagame/8RZJMAUV/">Digital Assignment 0: MicroStudio Tutorial</a></p>
-        </div>
-
-        <p style="margin: 15px;">More coming soon...</p>
-    </div>
-</body>
+        <script>
+            var headerspans = document.querySelectorAll("h1 > span");
+            for(var i = 0; i < headerspans.length; i++){
+                headerspans[i].style.animation = "upDown 1.5s alternate infinite ease-in-out";
+                headerspans[i].style.left = (i * 20) + "px";
+                headerspans[i].style.animationDelay = (i * 150) + "ms";
+            }
+        </script>
+    </body>
 </html>
